@@ -198,13 +198,13 @@ const ContentGrid: React.FC = () => {
             {/* Narrative */}
             <div className="space-y-6">
               <section>
-                <h3 className="text-lg font-bold mb-2">>> HYPOTHESIS</h3>
+                <h3 className="text-lg font-bold mb-2"> &gt;&gt; HYPOTHESIS</h3>
                 <p className="pl-4 border-l-4 border-black bg-gray-50 p-2">{selectedStudy.hypothesis}</p>
               </section>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                  <section>
-                    <h3 className="text-lg font-bold mb-2">>> THE PROBLEM</h3>
+                    <h3 className="text-lg font-bold mb-2"> &gt;&gt; THE PROBLEM</h3>
                     <ul className="list-disc pl-5 space-y-2">
                       {selectedStudy.problem.map((item, i) => (
                         <li key={i} className="pl-1 marker:text-black">{item}</li>
@@ -213,7 +213,7 @@ const ContentGrid: React.FC = () => {
                  </section>
 
                  <section>
-                    <h3 className="text-lg font-bold mb-2">>> THE SOLUTION</h3>
+                    <h3 className="text-lg font-bold mb-2"> &gt;&gt; THE SOLUTION</h3>
                     <ul className="list-disc pl-5 space-y-2">
                       {selectedStudy.solution.map((item, i) => (
                         <li key={i} className="pl-1 marker:text-black">{item}</li>
