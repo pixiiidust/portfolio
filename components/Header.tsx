@@ -43,7 +43,7 @@ const Header: React.FC = () => {
             </p>
             <div className="mt-6">
               <Button onClick={() => setIsBioOpen(true)} variant="link">
-                [ MEET THE PM >>> ]
+                [ MEET THE PM &gt;&gt;&gt; ]
               </Button>
             </div>
         </div>
