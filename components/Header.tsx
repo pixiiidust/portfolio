@@ -8,19 +8,11 @@ const Header: React.FC = () => {
 
   return (
     <header className="border-b-4 border-black">
-      {/* Top Title Bar */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end p-6 md:p-10 pb-6 border-b-4 border-black relative">
-        <div className="md:max-w-[70%]">
-          <h1 className="text-6xl md:text-8xl font-pixel leading-[0.85] mb-4 tracking-wide uppercase break-words">
-            {HERO_DATA.name}
-          </h1>
-          <h2 className="text-xl md:text-2xl font-bold tracking-widest uppercase pl-1">
-            {HERO_DATA.role}
-          </h2>
-        </div>
+      {/* Top Title Bar - Centered Layout */}
+      <div className="flex flex-col items-center justify-center p-8 md:p-12 border-b-4 border-black bg-white text-center">
         
-        {/* Pixel Icon / Profile Image */}
-        <div className="mt-6 md:mt-0 relative w-24 h-24 md:w-32 md:h-32 border-4 border-black shrink-0 overflow-hidden">
+        {/* Pixel Icon / Profile Image - Centered and resized to 200px */}
+        <div className="mb-8 relative w-[200px] h-[200px] border-4 border-black shrink-0 overflow-hidden shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
              <img 
                src="https://github.com/user-attachments/assets/3aa5bbe6-2b5f-488d-948a-39a3f24a0180" 
                alt="Jamie Sim" 
@@ -28,6 +20,15 @@ const Header: React.FC = () => {
              />
             {/* Pixel Grid Overlay Effect */}
             <div className="absolute inset-0 bg-[url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==')] opacity-20 pointer-events-none"></div>
+        </div>
+
+        <div className="w-full max-w-4xl">
+          <h1 className="text-6xl md:text-8xl font-pixel leading-[0.85] mb-4 tracking-wide uppercase break-words">
+            {HERO_DATA.name}
+          </h1>
+          <h2 className="text-xl md:text-2xl font-bold tracking-widest uppercase">
+            {HERO_DATA.role}
+          </h2>
         </div>
       </div>
 
