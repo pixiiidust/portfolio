@@ -21,12 +21,8 @@ const Header: React.FC = () => {
         
         {/* Pixel Icon / Profile Image */}
         <div className="mt-6 md:mt-0 relative w-24 h-24 md:w-32 md:h-32 border-4 border-black shrink-0 overflow-hidden">
-             {/* 
-                PLEASE NOTE: 
-                Save your image as 'profile.jpg' in your public folder for this to appear.
-             */}
              <img 
-               src="/profile.jpg" 
+               src="https://github.com/user-attachments/assets/3aa5bbe6-2b5f-488d-948a-39a3f24a0180" 
                alt="Jamie Sim" 
                className="w-full h-full object-cover"
              />
