@@ -15,7 +15,7 @@ I don't just manage backlogs; I deploy end-to-end frameworks (from heuristics to
 
 export const TICKER_TEXT = "PRODUCT STRATEGY /// GEN-AI OPS /// GROWTH";
 
-export const SYSTEM_MESSAGE = "[ SYSTEM: Containers sleep when idle. Allow ~15s for cold start. ]";
+export const SYSTEM_MESSAGE = "[ SYSTEM: Public GitHub Pages builds. Live links open in a new tab. ]";
 
 export const FOOTER_TAGLINE = "Building something cool? Let's talk.\nCurrently based in GTA, Ontario.";
 
@@ -124,24 +124,17 @@ export const CASE_STUDIES: CaseStudy[] = [
 export const PROJECTS: Project[] = [
   {
     id: "p1",
-    title: "Writemotion",
-    description: "A stylistic AI engine that performs text style transfer, blending your input with the distinct voice of famous authors.",
-    techFocus: "NLP, Generative AI & Style Transfer",
-    link: "https://writemotion-1051913727110.us-west1.run.app/"
+    title: "Planned Program Intel",
+    description: "Turns scattered public program information into traceable intelligence briefs so teams can spot eligibility, constraints, deadlines, and next actions without manually chasing sources.",
+    techFocus: "Public Signal Monitoring, Source Traceability + Time-to-Brief Reduction",
+    link: "https://pixiiidust.github.io/planned-program-intel/"
   },
   {
     id: "p2",
-    title: "LLM-Council",
-    description: "An orchestration of multi-persona LLM agents designed to debate and reason with each other, simulating a \"council\" of diverse experts.",
-    techFocus: "Multi-Agent Systems & Prompt Engineering",
-    link: "https://llm-council-1051913727110.us-west1.run.app/"
-  },
-  {
-    id: "p3",
-    title: "RLdojo",
-    description: "An interactive, visual app that demystifies RL by allowing users to train toy agents and visualize results in real-time.",
-    techFocus: "Reinforcement Learning, EdTech & Data Visualization",
-    link: "https://rldojo-1051913727110.us-west1.run.app/"
+    title: "Pixi Wiki",
+    description: "Compiles Jamie's research and project knowledge into curated, agent-readable wiki pages so humans and AI agents can navigate one source of truth instead of scattered notes.",
+    techFocus: "Knowledge Graphs, Compiled Wiki RAG + Lower-Hallucination Retrieval Patterns",
+    link: "https://pixiiidust.github.io/pixi-wiki/"
   }
 ];
 
