@@ -132,8 +132,8 @@ export const PROJECTS: Project[] = [
   {
     id: "p2",
     title: "Pixi Wiki",
-    description: "Compiles Jamie's research and project knowledge into curated, agent-readable wiki pages so humans and AI agents can navigate one source of truth instead of scattered notes.",
-    techFocus: "Knowledge Graphs, Compiled Wiki RAG + Lower-Hallucination Retrieval Patterns",
+    description: "Publishes Jamie's notes, project docs, and research as maintained knowledge bases so humans can browse a clean wiki and agents can read, search, and cite the same Markdown corpus.",
+    techFocus: "Static Knowledge Bases, llms.txt, index.json + Read-Only MCP",
     link: "https://pixiiidust.github.io/pixi-wiki/"
   }
 ];
