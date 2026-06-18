@@ -91,7 +91,7 @@ const ContentGrid: React.FC = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-xs font-bold uppercase hover:underline"
                     >
-                        [ LAUNCH DEMO ] <ExternalLink size={12} className="ml-1"/>
+                        [ LAUNCH ] <ExternalLink size={12} className="ml-1"/>
                     </a>
                 </div>
             ))}
