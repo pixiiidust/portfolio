@@ -85,14 +85,26 @@ const ContentGrid: React.FC = () => {
                     <p className="font-mono text-sm mb-4 leading-tight opacity-80 min-h-[2.5em]">
                         {project.description}
                     </p>
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-xs font-bold uppercase hover:underline"
-                    >
-                        [ LAUNCH ] <ExternalLink size={12} className="ml-1"/>
-                    </a>
+                    <div className="flex flex-wrap gap-3">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-xs font-bold uppercase hover:underline"
+                      >
+                          [ LAUNCH ] <ExternalLink size={12} className="ml-1"/>
+                      </a>
+                      {project.repoLink && (
+                        <a
+                          href={project.repoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-xs font-bold uppercase hover:underline"
+                        >
+                            [ CODE ] <ExternalLink size={12} className="ml-1"/>
+                        </a>
+                      )}
+                    </div>
                 </div>
             ))}
             

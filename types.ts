@@ -19,6 +19,7 @@ export interface Project {
   description: string;
   techFocus: string;
   link: string;
+  repoLink?: string;
 }
 
 export interface SocialLink {
