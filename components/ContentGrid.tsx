@@ -84,6 +84,19 @@ const ContentGrid: React.FC = () => {
                     </div>
                     <p className="font-mono text-sm mb-4 leading-tight opacity-80 min-h-[2.5em]">
                         {project.description}
+                        {project.paperLink && project.paperLabel && (
+                          <>
+                            {' '}
+                            <a
+                              href={project.paperLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-bold underline"
+                            >
+                              {project.paperLabel}
+                            </a>
+                          </>
+                        )}
                     </p>
                     <div className="flex flex-wrap gap-3">
                       <a

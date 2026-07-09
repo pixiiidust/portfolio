@@ -17,6 +17,8 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  paperLabel?: string;
+  paperLink?: string;
   techFocus: string;
   link: string;
   repoLink?: string;

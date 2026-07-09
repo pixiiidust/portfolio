@@ -132,7 +132,9 @@ export const PROJECTS: Project[] = [
   {
     id: "p2",
     title: "J-Space-Replay",
-    description: "Replays VLM lens readouts over preset video traces so visitors can inspect what the model is poised to say without installing the local upload pipeline.",
+    description: "Replays VLM lens readouts over preset video traces so visitors can inspect what the model is poised to say without installing the local upload pipeline. Inspired by Anthropic's J-space paper.",
+    paperLabel: "Read the paper",
+    paperLink: "https://transformer-circuits.pub/2026/workspace/index.html",
     techFocus: "VLM Lens Replay, Preset Library + Local Upload Pipeline",
     link: "https://pixiiidust.github.io/j-space-replay/",
     repoLink: "https://github.com/pixiiidust/j-space-replay"
