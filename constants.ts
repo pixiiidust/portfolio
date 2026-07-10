@@ -1,22 +1,27 @@
-import { CaseStudy, Project, SocialLink } from './types';
+import { CaseStudy, Project } from './types';
+
+export const PROFILE_PHOTO_URL = "https://github.com/user-attachments/assets/1e9799d3-59e1-46d3-87d3-0a94e8454172";
 
 export const HERO_DATA = {
   name: "JAMIE SIM",
-  subHeadline: "Building AI-powered products that solve tomorrow's problems today.\nMy motto is to anticipate what users want and ship quickly.",
-  tickerText: "PRODUCT STRATEGY /// GEN-AI OPS /// GROWTH",
-  bioHeadline: "Meet the PM",
-  bioText: `From product strategy to the nitty gritty details, I love all parts of building delightful tech products. I thrive in the messy middle where data is scarce and timelines are tight. 
-I don't just manage backlogs; I deploy end-to-end frameworks (from heuristics to Generative AI) that creates clarity and drives velocity.`,
-  currentFocus: "I am currently advising startups seeking to turn AI research into market-ready products.",
-  numbers: "For 9+ years, I have led product growth for agency and in-house roles, driving impact for 50+ B2B and B2C firms (up to $150M in revenue). I have led revenue turnarounds for companies and helped startups survive by turning monthly roadmaps into weekly releases. I co-founded and exited a product agency before returning to academia (2019-2024) to deepen my technical foundation.",
-  education: "University of Waterloo: Bachelor's Degree (Honours) in Geomatics (Distinction, 3.8 GPA). My background in spatial analysis and statistics drives my data-first approach to product."
+  introLine: "I enjoy building AI products for problems that are still taking shape.",
 };
 
 export const TICKER_TEXT = "PRODUCT STRATEGY /// GEN-AI OPS /// GROWTH";
 
-export const SYSTEM_MESSAGE = "[ SYSTEM: Public GitHub Pages builds. Live links open in a new tab. ]";
-
 export const FOOTER_TAGLINE = "Building something cool? Let's talk.\nCurrently based in GTA, Ontario.";
+
+export const BIO_DATA = {
+  intro: "From product strategy down to the details, I love every part of building products people actually enjoy using.",
+  principles: [
+    "I look for latent demand and build on behaviours people already have, rather than inventing needs.",
+    "I favour products where usage itself is the distribution. If the growth loop isn't structural, I prioritize it less.",
+  ],
+  closing: "Right now that means AI-native applications, where the challenge is delivering a tasteful experience without shipping slop. The bar is taste, and the test is whether people keep coming back.",
+  highlights: "For 9+ years, I have led product growth for agency and in-house roles, driving impact for 50+ B2B and B2C firms (up to $150M in revenue). I have led revenue turnarounds for companies and helped startups survive by turning monthly roadmaps into weekly releases. I co-founded and exited a product agency before returning to academia (2019-2024) to deepen my technical foundation.",
+  currentFocus: "I am currently advising startups seeking to turn AI research into market-ready products.",
+  education: "University of Waterloo: Bachelor's Degree (Honours) in Geomatics (Distinction, 3.8 GPA). My background in spatial analysis and statistics drives my data-first approach to product.",
+};
 
 export const HOBBIES_DATA = {
   text: "Outside tech, I enjoy creating music and writing poetic lyrics. Check out my music here:",
@@ -25,139 +30,164 @@ export const HOBBIES_DATA = {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    id: "01",
-    title: "The 12-Hour Launch Framework",
-    tagline: "Accelerated release cycles from Monthly to Weekly using AI tool stack",
-    role: "Product Lead, Open Research Institute",
-    status: "Shipped & Operational",
-    context: "We were building an AI text summary application with a novel \"map-like stretching\" UI to help readers scan long-form content. However, the engineering and product teams were stuck in a \"Monthly Release Cycle\" due to the complexities of interpreting user feedback. This latency meant we only learned if a feature achieved product-market fit once every 30 days, threatening the startup's runway.",
-    goal: "Compress the \"Idea-to-Validation\" loop from 4 weeks to <12 hours to accelerate learning.",
-    hypothesis: "If we replace slow, manual user recruitment with a high-velocity feedback loop using modern AI tools (Create.xyz for prototyping + VoicePanel for instant testing), then we can validate feature concepts in a single day with real users, reducing engineering waste on low-value features.",
+    slug: 'twelve-hour-launch',
+    kind: 'work',
+    title: 'The 12-Hour Launch Framework',
+    tagline: 'Cut the idea-to-validation loop from 4 weeks to under 12 hours.',
+    role: 'Product Lead, Open Research Institute',
+    status: 'Shipped & Operational',
+    tech: ['Rapid Validation', 'Agentic Prototyping + Subagent Orchestration'],
+    links: [],
+    insight: 'The bottleneck was never engineering speed. It was feedback latency. Once you can watch real users struggle in hours instead of weeks, you stop shipping features that were going to fail anyway.',
+    context: 'We were building an AI text-summary app with a map-like stretching UI for scanning long-form content. The teams were stuck on a monthly release cycle, because interpreting user feedback was slow. We only learned whether a feature had product-market fit once every 30 days, which put the startup\'s runway at risk.',
+    goal: 'Compress the idea-to-validation loop from 4 weeks to under 12 hours, so we learn faster.',
+    hypothesis: 'If we replace slow, manual work with a high-velocity loop built on agentic AI (Claude and Hermes agent harnesses for prototyping, with subagent orchestration to synthesise feedback), we can validate a feature concept in a single day with real users and stop wasting engineering on low-value features.',
     problem: [
-      "Slow Feedback: Traditional user recruitment and moderated testing took 5-10 days per cycle.",
-      "High Opportunity Cost: Engineering spent weeks building features that often failed upon release because we couldn't \"see\" users struggling until it was too late.",
-      "Subjective Analysis: Feedback was often interpreted subjectively by different stakeholders (\"I think users will like this\"), leading to roadmap conflicts."
+      'Slow feedback: traditional recruitment and moderated testing took 5 to 10 days per cycle.',
+      'High opportunity cost: engineering spent weeks on features that failed on release, because we could not see users struggle until it was too late.',
+      'Subjective analysis: feedback was read differently by different stakeholders ("I think users will like this"), which caused roadmap conflict.',
     ],
-    solution: [
-      "The Hyper-Loop: I architected a 12-hour validation pipeline to watch real customers struggle through our product before we committed code.",
-      "10:00 AM (Synthesis): New feature idea triggered by user insight.",
-      "12:00 PM (Prototype): Designers use Create.xyz to code a working prototype in hours, not days.",
-      "4:00 PM (Testing): Deployed to VoicePanel to capture hundreds of video responses from real users in minutes.",
-      "6:00 PM (Analysis): We watched the recordings. We didn't just look for \"likes\"; we listened for confusion. Insight: If a user narrating their experience got stuck, we double-clicked there. If they lit up, we knew we hit gold.",
-      "8:00 PM (Decision): We knew immediately if we should Launch, Refine, or Kill."
-    ],
+    solution: `I built a 12-hour validation pipeline to watch real customers struggle through the product before we committed code.
+
+- 10:00 Synthesis. A user insight triggers a feature idea.
+- 12:00 Prototype. An agent harness (Claude, Hermes) builds a working prototype in hours, not days.
+- 16:00 Test. Put it in front of real users and capture their responses in minutes.
+- 18:00 Analyse. Subagents cluster the responses and flag where people got confused, then I reviewed those moments. We listened for confusion, not likes. If a user narrating their experience got stuck, we looked closer. If they lit up, we knew we had something.
+- 20:00 Decide. Launch, refine, or kill, the same day.`,
     metrics: [
-      "North Star Metric: Release Cadence (Time from Concept to Production).",
-      "Result: Accelerated releases from Monthly to Weekly.",
-      "Business Impact: Extended the startup's runway by 3+ months by preventing the development of 4 low-value features that failed the 6:00 PM test."
+      'North star: release cadence, from concept to production.',
+      'Result: releases moved from monthly to weekly.',
+      'Impact: extended the startup\'s runway by 3+ months, by preventing four low-value features that failed the 6pm test.',
     ],
-    risks: [
-      "Risk: \"Prototype Bias.\" Users might react differently to a Create.xyz prototype than a full production app.",
-      "Mitigation: We focused on usability friction (can they use it?) rather than aesthetic preference (do they like the colors?).",
-      "Counter-Metric: False Positive Rate. We tracked how many features passed the 8:00 PM check but failed once fully shipped (Target: <10%)."
-    ]
+    reflection: 'The tools were not the point. The point was making a "kill" decision cheap and same-day. Killing four features early was worth more than shipping them.',
   },
   {
-    id: "02",
-    title: "E-commerce Inventory Intelligence",
-    tagline: "Lifted ROAS 25x and reduced CAC by 30%.",
-    role: "Product Lead, Bluewater Media",
-    status: "Shipped & Operational",
-    context: "A key e-commerce client was suffering from a 6-month loss streak. The firm prioritized stocking \"cash cow\" products (smaller sizes) based on historical sales volume. Larger sizes were listed on the app but frequently out of stock. Analytics showed low sales volume and low LTV for these larger sizes, leading stakeholders to believe there was no market demand.",
-    goal: "Identify the root cause of the revenue bleed and prove that \"low sales\" did not mean \"low demand.\"",
-    hypothesis: "(Conceived via Return on Customer metrics) If we capture user intent at the \"Size Selection\" funnel stage, specifically for out-of-stock variations, then we can prove that the low LTV on larger sizes is actually a signal of unmet demand, justifying a shift in inventory strategy.",
+    slug: 'mobile-transformation',
+    kind: 'work',
+    title: 'Mobile Transformation (>100k Users)',
+    tagline: 'Moved bookings from phone to app. ~80% retention in 3 months.',
+    role: 'Product Lead, Bluewater Media',
+    status: 'Shipped & Scaled',
+    tech: ['Habit-Forming Onboarding', 'Time-to-First-Booking + Power-User Migration'],
+    links: [],
+    insight: 'Downloads are a vanity metric. The habit forms at the first booking, so I optimized for Time to First Booking and moved the highest-value regulars over first.',
+    context: 'A beauty chain with 12 outlets and over 100k customers ran on a legacy phone-booking system. The manual process capped growth, hid behavioural data, and cost a lot to staff.',
+    goal: 'Move customers from phone to a mobile app, without alienating a non-technical base.',
+    hypothesis: 'If we cut booking friction by moving from synchronous calls to an asynchronous app, and optimize for Time to First Booking, we create a habit-forming loop that retains better than the phone channel.',
     problem: [
-      "The \"Cash Cow\" Bias: The inventory algorithm over-indexed on high-volume small sizes, leaving high-margin large sizes perpetually out of stock.",
-      "Funnel Blockage: The drop-off wasn't at the landing page; it was at the \"Select Size\" step. Users selected a size, found it unavailable, and couldn't \"Add to Cart.\"",
-      "False Negative Analytics: The business interpreted \"Zero Adds to Cart\" for large sizes as \"Zero Interest,\" blind to the fact that the UI prevented the action entirely."
+      'Scaling bottleneck: booking volume was capped by the number of receptionists.',
+      'Data black hole: phone bookings gave no behavioural data, so we could not tell a one-time visitor from a regular.',
+      'Friction: customers had to call during business hours, so evenings and weekends were missed revenue.',
     ],
-    solution: [
-      "The MVP (UI Fix): We replaced the \"Out of Stock\" dead-end with an \"Availability Request\" feature. Instead of a grayed-out button, users saw \"Notify Me When Available\".",
-      "Strategic Shift: We proved that the \"Large Size\" customer segment had extremely high intent, debunking the low LTV myth.",
-      "The Data Loop: We fed these \"Waitlist\" emails back into the ad platforms to create Lookalike Audiences. We started targeting people who looked like the high value \"Wait-listers,\" not just generic shoppers."
-    ],
+    solution: `- North star: we ignored app downloads and focused on Time to First Booking.
+- Flow: onboarding was streamlined to reach a booked appointment in the fewest taps.
+- Data-driven migration: I analysed history to handle multi-booking edge cases, and migrated the power users (more than 3 bookings a month) first across the 12 outlets, since they were the highest value.`,
     metrics: [
-      "North Star Metric: Return on Ad Spend (ROAS).",
-      "Result: Lifted ROAS by 25x by retargeting high-intent users.",
-      "Secondary Metrics: Reduced Customer Acquisition Cost (CAC) by 20-30% and lifted overall conversion rates by 20%."
+      'Primary: onboarding completion and retention.',
+      'Definition: I defined retention on unique active users, deduplicated by user ID, not total booking volume, so a small cohort of frequent bookers could not skew it.',
+      'Result: about 80% retention and onboarding completion within 3 months.',
+      'Operational: call-center volume dropped sharply, which freed staff for the in-store experience.',
     ],
     risks: [
-      "Risk: User Trust. If we notify users but don't restock the large sizes quickly, we damage brand trust.",
-      "Mitigation: We used the initial waitlist data to immediately justify a specific purchase order for the larger inventory.",
-      "Counter-Metric: Unsubscribe Rate from availability emails (Target: <2%)."
-    ]
+      'Risk: digital exclusion. Older customers might struggle with the app and stop booking.',
+      'Mitigation: we kept the phone line open and incentivized app use with loyalty points.',
+      'Counter-metric: phone booking volume, tracked to fall at a healthy rate rather than crash to zero.',
+    ],
   },
   {
-    id: "03",
-    title: "Mobile Transformation (>100k Users)",
-    tagline: "Migration from Phone to App bookings. 80% Retention.",
-    role: "Product Lead, Bluewater Media",
-    status: "Shipped & Scaled",
-    context: "A major beauty chain with 12 outlets and over 100k customers was reliant on a legacy phone-based booking system. This manual process created a bottleneck for growth, data opacity, and high operational costs for the call center.",
-    goal: "Direct the digital transformation from analog (phone) to digital (mobile app) without alienating a non-technical customer base.",
-    hypothesis: "If we reduce the friction of booking by moving from synchronous calls to an asynchronous mobile app, and we optimize for \"Time-to-First Booking,\" then we will create a habit-forming loop that drives higher long-term retention than the phone channel.",
+    slug: 'ecommerce-inventory',
+    kind: 'work',
+    title: 'E-commerce Inventory Intelligence',
+    tagline: 'Reframed "low sales" as unmet demand. Lifted ROAS 25x.',
+    role: 'Product Lead, Bluewater Media',
+    status: 'Shipped & Operational',
+    tech: ['Intent Capture', 'Funnel Analysis + Lookalike Targeting'],
+    links: [],
+    insight: 'Low sales on the large sizes were not low demand. They were unmet demand. The UI blocked the add-to-cart, so "zero interest" was a false negative the interface created.',
+    context: 'A client was six months into a loss streak. The firm stocked cash-cow small sizes by historical volume, and larger sizes were listed but usually out of stock. Analytics showed low sales and low LTV on the large sizes, so stakeholders concluded there was no demand.',
+    goal: 'Find the real cause of the revenue bleed, and prove that low sales did not mean low demand.',
+    hypothesis: 'Conceived through a Return on Customer lens. If we capture user intent at the size-selection step, specifically for out-of-stock variants, we can show the low LTV on large sizes is actually unmet demand, which justifies a change in inventory strategy.',
     problem: [
-      "Scaling Bottleneck: Booking volume was capped by the number of receptionists available.",
-      "Data Black Hole: Phone bookings provided no behavioral data; we couldn't distinguish between a one-time visitor and a high-frequency regular.",
-      "Friction: Customers had to call during business hours, leading to missed revenue opportunities during evenings/weekends."
+      'Cash-cow bias: the inventory algorithm over-indexed on high-volume small sizes, leaving high-margin large sizes always out of stock.',
+      'Funnel blockage: the drop-off was at "select size," not the landing page. Users picked a size, found it unavailable, and could not add to cart.',
+      'False-negative analytics: the business read "zero adds to cart" on large sizes as "zero interest," blind to the fact that the UI prevented the action.',
     ],
-    solution: [
-      "The North Star: We ignored \"App Downloads\" (vanity metric) and focused entirely on \"Time to First Booking\".",
-      "The Flow: We streamlined onboarding to get the user to a \"Booked Appointment\" state in the fewest possible taps.",
-      "Data-Driven Migration: I analyzed historical data to handle multi-booking edge cases (customers with >3 bookings/month). We prioritized migrating these \"Power Users\" first across the 12 outlets, as they represented the highest value."
-    ],
+    solution: `- MVP: we replaced the out-of-stock dead-end with an "Availability Request." Instead of a greyed-out button, users saw "Notify me when available."
+- Strategic shift: we showed the large-size segment had very high intent, which debunked the low-LTV myth.
+- Data loop: we fed the waitlist emails into the ad platforms as lookalike audiences, and targeted people who resembled the high-value waitlisters instead of generic shoppers.`,
     metrics: [
-      "Primary Metric: Onboarding Completion & Retention Rate.",
-      "Metric Definition: To ensure accuracy, I defined \"Retention\" based on Unique Active Users (deduplicated by User ID) rather than Total Booking Volume. This prevented the data from being skewed by a small cohort of customers with multiple bookings in the same window.",
-      "Result: Reached ~80% retention and onboarding completion rates within 3 months of launch.",
-      "Operational Impact: Drastically reduced call center volume, freeing up staff to focus on in-store customer experience."
+      'North star: Return on Ad Spend.',
+      'Result: ROAS up 25x, by retargeting high-intent users.',
+      'Secondary: CAC down 20 to 30%, conversion up 20%.',
     ],
     risks: [
-      "Risk: \"Digital Exclusion.\" Older demographics might struggle with the app and stop booking entirely.",
-      "Mitigation: We kept the phone line active but incentivized app usage (loyalty points).",
-      "Counter-Metric: Booking Volume via Phone. We tracked this to ensure it was decreasing at a healthy rate, not hitting zero immediately."
-    ]
-  }
+      'Risk: user trust. Notifying users but not restocking quickly would hurt the brand.',
+      'Mitigation: we used the waitlist data to justify a specific purchase order for the larger inventory right away.',
+      'Counter-metric: unsubscribe rate from availability emails, target under 2%.',
+    ],
+  },
 ];
 
 export const PROJECTS: Project[] = [
   {
-    id: "p0",
-    title: "LKY Brain: Qwen3-14B LoRA",
-    description: "Tested whether a small open-source model on one consumer GPU can take on a domain expert's reasoning, cheaply, using Lee Kuan Yew as the case study. Defined a measurable eval for a subjective goal (six reasoning moves, blind-judged on held-out interviews), built the full pipeline from public transcripts to a trained model, and beat the base model on nearly every measure. Open-sourced as a reproducible template.",
-    techFocus: "LoRA Fine-Tuning, Dataset Engineering + Held-Out Evaluation",
-    link: "https://huggingface.co/sjsim/lky-qlora",
-    linkLabel: "MODEL",
-    repoLink: "https://github.com/pixiiidust/lky-brain"
+    slug: 'lky-brain',
+    kind: 'project',
+    title: 'LKY Brain: a reasoning-style LoRA for Qwen3-14B',
+    tagline: 'Gave a small local model a domain expert\'s way of reasoning.',
+    tech: ['LoRA Fine-Tuning', 'Dataset Engineering + Held-Out Evaluation'],
+    links: [
+      { label: 'LAUNCH', href: 'https://pixiiidust.github.io/lora-LKY-report/' },
+      { label: 'CODE', href: 'https://github.com/pixiiidust/lky-brain' },
+      { label: 'HuggingFace', href: 'https://huggingface.co/sjsim/lky-qlora' },
+    ],
+    insight: 'A reasoning style can be defined and measured. I turned "reason like him" into six observable moves (reframe the question, argue from first principles, use a concrete analogy, weigh interests over sentiment, bound uncertainty, be direct), so a fuzzy goal became a scored eval.',
+    problem: 'Small open-source models are cheap and private, but can one take on a domain expert\'s way of reasoning, not just their facts? Lee Kuan Yew was the test case, chosen for a distinctive method and a large public record.',
+    approach: 'Scraped public transcripts, built a two-part dataset (interview exchanges, plus speeches paired with generated questions), and LoRA fine-tuned Qwen3-14B on one consumer GPU. Judged blind against a held-out set of interviews.',
+    result: 'The tuned model beat the untuned base on nearly every move, with the voice score rising from 2.04 to 2.88.',
+    reflection: 'Two calls mattered more than the training. I shipped the less-overfit checkpoint over the one with the better training loss, because it generalised better on unseen questions. And I published the dataset as a reproducible recipe with pointers to the source, rather than redistributing the archive itself.',
   },
   {
-    id: "p1",
-    title: "Pixi Wiki",
-    description: "One source of notes and docs for both people and AI agents. People get a clean wiki. Agents get structured retrieval instead of web scraping: they search, read, and cite the Markdown directly, so they find the right source in a call or two instead of crawling and parsing pages.",
-    techFocus: "Human Wiki, Agent-Readable llms.txt / index.json + Read-Only MCP",
-    link: "https://pixiiidust.github.io/pixi-wiki/"
+    slug: 'pixi-wiki',
+    kind: 'project',
+    title: 'Pixi Wiki',
+    tagline: 'One source of notes and docs for both people and AI agents.',
+    tech: ['Human Wiki + Agent Retrieval (llms.txt, index.json, read-only MCP)'],
+    links: [
+      { label: 'LAUNCH', href: 'https://pixiiidust.github.io/pixi-wiki/' },
+    ],
+    insight: 'Publish the content as structured, agent-readable Markdown with an index, and agents retrieve exactly what they need instead of scraping HTML.',
+    problem: 'My notes and docs needed to serve two audiences at once. People browsing, and AI agents that read and cite them. Agents normally scrape a website, which is slow, noisy, and token-heavy.',
+    approach: 'One Markdown corpus, published as a clean human wiki, and exposed to agents through llms.txt, a read-only MCP server (list, search, read), and an index.json registry.',
+    result: 'Agents retrieve source-backed answers from the same maintained pages people browse, instead of scraping raw dumps, which cuts hallucinations and token waste.',
   },
   {
-    id: "p2",
-    title: "J-Space-Replay",
-    description: "A look under the hood at what a vision-language model is reasoning about as it watches a video, including what it actually \"thinks\" but never says. Preset clips run in the browser; or install code from repo to try your own clips. Inspired by Anthropic's",
-    paperLabel: "J-space paper.",
-    paperLink: "https://transformer-circuits.pub/2026/workspace/index.html",
-    techFocus: "VLM Interpretability, Logit + Jacobian Lens Decoding + Precomputed Trace Gallery",
-    link: "https://pixiiidust.github.io/j-space-replay/",
-    repoLink: "https://github.com/pixiiidust/j-space-replay"
+    slug: 'j-space-replay',
+    kind: 'project',
+    title: 'J-Space-Replay',
+    tagline: 'A look under the hood at how a vision-language model reasons.',
+    tech: ['VLM Interpretability', 'Logit + Jacobian Lens Decoding + Precomputed Trace Gallery'],
+    links: [
+      { label: 'LAUNCH', href: 'https://pixiiidust.github.io/j-space-replay/' },
+      { label: 'CODE', href: 'https://github.com/pixiiidust/j-space-replay' },
+      { label: 'paper', href: 'https://transformer-circuits.pub/2026/workspace/index.html' },
+    ],
+    insight: 'An interpretability lens can surface a model\'s internal state frame by frame, including reasoning that never reaches its answer.',
+    problem: 'You can read a vision-language model\'s answer, but not what it was reasoning about internally, including what it "thinks" but never says.',
+    approach: 'Qwen2.5-VL with logit-lens and Jacobian (J-lens) decoding, and per-layer residual capture, replayed over preset video clips in the browser, or run on your own clips with a local pipeline.',
+    result: 'Visitors browse a layer-by-layer grid of the top word the model "read" for each output token, and can spot reasoning it computed but never said. Explore preset clips instantly, or upload your own.',
   },
   {
-    id: "p3",
-    title: "Planned Program Intel",
-    description: "A reimagining of planned.com's AI-native workflow, exploring how a product surface can lift user productivity. Each decision bubbles up to the next best decision-maker with its sources attached, so people act on it instead of triaging a pile of alerts.",
-    techFocus: "AI-Native App UX, Decision Routing + Source Traceability",
-    link: "https://pixiiidust.github.io/planned-program-intel/"
-  }
-];
-
-export const SOCIAL_LINKS: SocialLink[] = [
-  { label: "sjsim@uwaterloo.ca", url: "mailto:sjsim@uwaterloo.ca", type: "email" },
-  { label: "LinkedIn", url: "https://www.linkedin.com/in/jamie-s-6083b6203/", type: "link" },
-  { label: "GitHub", url: "https://github.com/pixiiidust", type: "link" }
+    slug: 'planned-program-intel',
+    kind: 'project',
+    title: 'Planned Program Intel',
+    tagline: 'An inbox of decisions, each with its justification and a memory of past calls.',
+    tech: ['AI-Native App UX', 'Decision Routing + Precedent Memory'],
+    links: [
+      { label: 'LAUNCH', href: 'https://pixiiidust.github.io/planned-program-intel/' },
+    ],
+    insight: 'The best version is not a chatbot. It is an inbox of decisions, where each one routes to the right owner with its justification, and every human choice becomes evidence the next decision cites.',
+    problem: 'In AI-native tools, decisions pile up on users as a queue of alerts to chase and triage, and the reasoning behind past calls is lost.',
+    approach: 'A UX concept reimagining planned.com\'s program workflow. Each decision arrives with what needs attention, who should decide, the track record of similar past cases, what is different this time, and a recommended action. Resolving one (accept, change, override, escalate) records the reasoning and distills it into a reusable precedent that later decisions cite.',
+    result: 'A 60-second demo that shows the pattern. Decisions route to the right owner with their justification attached, and every human resolution becomes institutional memory the next decision cites. No autonomous execution.',
+  },
 ];
