@@ -21,6 +21,7 @@ export interface Project {
   paperLink?: string;
   techFocus: string;
   link: string;
+  linkLabel?: string;
   repoLink?: string;
 }
 
