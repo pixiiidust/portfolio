@@ -36,8 +36,8 @@ const AboutPage: React.FC = () => {
             I work from these first principles:
           </p>
           <ul className="space-y-3 list-disc pl-6">
-            {BIO_DATA.principles.map((principle) => (
-              <li key={principle} className="text-base md:text-lg leading-relaxed">
+            {BIO_DATA.principles.map((principle, index) => (
+              <li key={`${index}-${principle}`} className="text-base md:text-lg leading-relaxed">
                 {principle}
               </li>
             ))}

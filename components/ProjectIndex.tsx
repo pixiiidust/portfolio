@@ -41,7 +41,7 @@ const ProjectIndex: React.FC = () => {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-xs font-semibold uppercase hover:underline min-h-[44px] items-center"
+                      className="inline-flex items-center text-xs font-semibold uppercase hover:underline min-h-11"
                     >
                       [ {link.label} ] <ExternalLink size={12} className="ml-1" />
                     </a>

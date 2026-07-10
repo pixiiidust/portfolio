@@ -36,7 +36,7 @@ const CaseStudyIndex: React.FC = () => {
                 <div className="md:shrink-0">
                   <Link
                     to={`/work/${study.slug}`}
-                    className="inline-flex items-center text-xs font-semibold uppercase hover:underline min-h-[44px] items-center"
+                    className="inline-flex items-center text-xs font-semibold uppercase hover:underline min-h-11"
                   >
                     [ READ ]
                   </Link>

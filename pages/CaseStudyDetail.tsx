@@ -66,8 +66,8 @@ const CaseStudyDetail: React.FC = () => {
         <Section label="Hypothesis"><p className="text-base leading-relaxed">{study.hypothesis}</p></Section>
         <Section label="The Problem">
           <ul className="space-y-3 list-disc pl-6">
-            {study.problem.map((item) => (
-              <li key={item} className="text-base leading-relaxed">{item}</li>
+            {study.problem.map((item, index) => (
+              <li key={`${index}-${item}`} className="text-base leading-relaxed">{item}</li>
             ))}
           </ul>
         </Section>
@@ -75,8 +75,8 @@ const CaseStudyDetail: React.FC = () => {
         <Section label="Measuring Success">
           <div className="border-2 border-black p-4 md:p-6 bg-gray-50">
             <ul className="space-y-3">
-              {study.metrics.map((item) => (
-                <li key={item} className="text-base leading-relaxed flex gap-2">
+              {study.metrics.map((item, index) => (
+                <li key={`${index}-${item}`} className="text-base leading-relaxed flex gap-2">
                   <span className="font-semibold">+</span>
                   <span>{item}</span>
                 </li>
@@ -88,8 +88,8 @@ const CaseStudyDetail: React.FC = () => {
         {study.risks && study.risks.length > 0 && (
           <Section label="Risks and Mitigation">
             <ul className="space-y-3 list-disc pl-6">
-              {study.risks.map((item) => (
-                <li key={item} className="text-base leading-relaxed">{item}</li>
+              {study.risks.map((item, index) => (
+                <li key={`${index}-${item}`} className="text-base leading-relaxed">{item}</li>
               ))}
             </ul>
           </Section>
@@ -122,16 +122,16 @@ const StructuredText: React.FC<{ content: string }> = ({ content }) => (
 
       return isList ? (
         <ul key={blockIndex} className="space-y-3 list-disc pl-6">
-          {lines.map((line) => (
-            <li key={line} className="text-base leading-relaxed">
+          {lines.map((line, lineIndex) => (
+            <li key={`${blockIndex}-${lineIndex}`} className="text-base leading-relaxed">
               {line.replace(/^\-\s*/, '')}
             </li>
           ))}
         </ul>
       ) : (
         <div key={blockIndex} className="space-y-3">
-          {lines.map((line) => (
-            <p key={line} className="text-base leading-relaxed">{line}</p>
+          {lines.map((line, lineIndex) => (
+            <p key={`${blockIndex}-${lineIndex}`} className="text-base leading-relaxed">{line}</p>
           ))}
         </div>
       );
