@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { CASE_STUDIES, PROJECTS } from '../constants';
 
 const navItems = [
   { label: 'HOME', to: '/' },
@@ -59,7 +60,7 @@ const Nav: React.FC = () => {
       {open && (
         <div
           id="mobile-nav-panel"
-          className="md:hidden absolute top-full left-0 right-0 z-[99] bg-white border-[3px] border-t-0 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]"
+          className="md:hidden absolute top-full left-0 right-0 z-[99] max-h-[calc(100vh-7rem)] overflow-y-auto overscroll-contain bg-white border-[3px] border-t-0 border-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]"
         >
           <nav className="flex flex-col" aria-label="Mobile primary">
             {navItems.map((item) => (
@@ -72,6 +73,44 @@ const Nav: React.FC = () => {
                 {item.label}
               </Link>
             ))}
+
+            <div role="group" aria-labelledby="mobile-side-projects-heading">
+              <h2
+                id="mobile-side-projects-heading"
+                className="bg-black text-white px-6 py-3 font-pixel text-xl uppercase tracking-wider"
+              >
+                Side Projects
+              </h2>
+              {PROJECTS.map((project) => (
+                <Link
+                  key={project.slug}
+                  to={`/projects/${project.slug}`}
+                  onClick={() => setOpen(false)}
+                  className="px-6 py-3 text-sm font-semibold uppercase leading-snug border-b border-gray-300 hover:bg-black hover:text-white transition-colors min-h-11 flex items-center"
+                >
+                  {project.title}
+                </Link>
+              ))}
+            </div>
+
+            <div role="group" aria-labelledby="mobile-case-studies-heading">
+              <h2
+                id="mobile-case-studies-heading"
+                className="bg-black text-white px-6 py-3 font-pixel text-xl uppercase tracking-wider"
+              >
+                Case Studies
+              </h2>
+              {CASE_STUDIES.map((study) => (
+                <Link
+                  key={study.slug}
+                  to={`/work/${study.slug}`}
+                  onClick={() => setOpen(false)}
+                  className="px-6 py-3 text-sm font-semibold uppercase leading-snug border-b border-gray-300 last:border-b-0 hover:bg-black hover:text-white transition-colors min-h-11 flex items-center"
+                >
+                  {study.title}
+                </Link>
+              ))}
+            </div>
           </nav>
         </div>
       )}
