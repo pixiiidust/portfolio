@@ -150,7 +150,7 @@ export const PROJECTS: Project[] = [
     slug: 'pixi-wiki',
     kind: 'project',
     title: 'Pixi Wiki',
-    tagline: 'One set of notes that serves people and AI agents from the same pages.',
+    tagline: 'One set of notes that serves people and AI agents from the same knowledge base.',
     tech: ['Human Wiki + Agent Retrieval (llms.txt, index.json, read-only MCP)'],
     links: [
       { label: 'LAUNCH', href: 'https://pixiiidust.github.io/pixi-wiki/' },
