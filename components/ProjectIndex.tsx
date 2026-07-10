@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PROJECTS } from '../constants';
-import { ExternalLink } from 'lucide-react';
 
 const ProjectIndex: React.FC = () => {
   return (
@@ -34,18 +33,13 @@ const ProjectIndex: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-3 md:shrink-0">
-                  {project.links.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-xs font-semibold uppercase hover:underline min-h-11"
-                    >
-                      [ {link.label} ] <ExternalLink size={12} className="ml-1" />
-                    </a>
-                  ))}
+                <div className="md:shrink-0">
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="inline-flex items-center text-xs font-semibold uppercase hover:underline min-h-11"
+                  >
+                    [ VIEW ]
+                  </Link>
                 </div>
               </div>
             </div>
