@@ -123,6 +123,15 @@ export const CASE_STUDIES: CaseStudy[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "p0",
+    title: "LKY Brain: Qwen3-14B LoRA",
+    description: "Fine-tuned Qwen3-14B with a LoRA adapter to capture Lee Kuan Yew's first-principles reasoning style from speeches, interviews, and press conferences. Built the corpus-to-training pipeline and held-out evaluation, improving the model's judged voice score from 2.04 to 2.88.",
+    techFocus: "LoRA Fine-Tuning, Dataset Engineering + Held-Out Evaluation",
+    link: "https://huggingface.co/sjsim/lky-qlora",
+    linkLabel: "MODEL",
+    repoLink: "https://github.com/pixiiidust/lky-brain"
+  },
+  {
     id: "p1",
     title: "Pixi Wiki",
     description: "Publishes Jamie's notes, project docs, and research as maintained knowledge bases so humans can browse a clean wiki while agents read, search, and cite the same Markdown corpus through llms.txt, index.json, and read-only MCP.",
