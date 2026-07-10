@@ -8,27 +8,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=VT323&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+      // GitHub Pages SPA restoration: if 404.html redirected here with ?/path,
+      // restore the real URL so BrowserRouter picks up the route.
+      (function () {
+        if (window.location.search && window.location.search.indexOf('?/') === 0) {
+          var redirected = window.location.search
+            .slice(2) // remove '?/'
+            .split('&')
+            .reduce(function (acc, part, i) {
+              if (i === 0) {
+                acc.path = part.replace(/~and~/g, '&');
+              } else {
+                acc.search += (acc.search ? '&' : '?') + part.replace(/~and~/g, '&');
+              }
+              return acc;
+            }, { path: '', search: '' });
+
+          var base = window.location.pathname.replace(/\/$/, '');
+          var newUrl = base + '/' + redirected.path + redirected.search + window.location.hash;
+          window.history.replaceState(null, null, newUrl);
+        }
+      })();
+    </script>
     <style>
       :root {
         --bg-color: #FFFFFF;
         --text-color: #000000;
         --border-color: #000000;
+        --brut-border: 3px;
+        --brut-shadow: 5px;
       }
       html {
         scroll-behavior: smooth;
       }
       body {
-        background-color: #f0f0f0; /* Light gray background for the "desk" */
+        background-color: #f0f0f0;
         font-family: 'JetBrains Mono', monospace;
         color: var(--text-color);
         display: flex;
         justify-content: center;
         min-height: 100vh;
         padding: 0;
+        overflow-x: hidden;
       }
       @media (min-width: 1024px) {
         body {
             padding: 2rem;
+        }
+      }
+      /* Scale up brutalist details at larger breakpoints */
+      @media (min-width: 768px) {
+        :root {
+          --brut-border: 6px;
+          --brut-shadow: 10px;
         }
       }
       .font-pixel {
@@ -46,6 +79,72 @@
       }
       .clip-triangle {
         clip-path: polygon(0 0, 100% 0, 100% 100%);
+      }
+
+      /* Reading column for detail pages */
+      .reading-column {
+        max-width: 65ch;
+        line-height: 1.75;
+      }
+      .reading-column p {
+        margin-bottom: 1.25em;
+      }
+      .reading-column ul {
+        margin-bottom: 1.25em;
+        padding-left: 1.5em;
+      }
+      .reading-column li {
+        margin-bottom: 0.6em;
+      }
+
+      /* Horizontal scroll for wide blocks */
+      .scroll-x {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Responsive media */
+      img, video, embed, iframe {
+        max-width: 100%;
+      }
+
+      /* Focus states for accessibility */
+      a:focus-visible,
+      button:focus-visible,
+      [tabindex]:focus-visible {
+        outline: 3px solid #000;
+        outline-offset: 2px;
+      }
+
+      /* Touch target minimum */
+      .touch-target {
+        min-height: 44px;
+        min-width: 44px;
+      }
+
+      /* Mobile display type scaling */
+      .display-xl {
+        font-size: 3rem;
+        line-height: 0.9;
+      }
+      @media (min-width: 768px) {
+        .display-xl {
+          font-size: 5rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        .display-xl {
+          font-size: 6rem;
+        }
+      }
+      .display-lg {
+        font-size: 2rem;
+        line-height: 1;
+      }
+      @media (min-width: 768px) {
+        .display-lg {
+          font-size: 2.5rem;
+        }
       }
     </style>
   <script type="importmap">

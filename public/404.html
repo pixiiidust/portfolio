@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jamie Sim | Product Manager</title>
+    <script type="text/javascript">
+      // GitHub Pages SPA fallback (spa-github-pages technique).
+      // On a project page (pixiiidust.github.io/portfolio/...), GitHub Pages
+      // serves this 404.html for any unknown path. Preserve the path in the
+      // redirect query so index.html can restore it for BrowserRouter.
+      (function () {
+        var pathSegmentsToKeep = 1; // strip "/portfolio" segment
+
+        var l = window.location;
+        l.replace(
+          l.protocol +
+            '//' +
+            l.hostname +
+            (l.port ? ':' + l.port : '') +
+            l.pathname
+              .split('/')
+              .slice(0, 1 + pathSegmentsToKeep)
+              .join('/') +
+            '/?/' +
+            l.pathname
+              .slice(1)
+              .split('/')
+              .slice(pathSegmentsToKeep)
+              .join('/')
+              .replace(/&/g, '~and~') +
+            (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+            l.hash
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
