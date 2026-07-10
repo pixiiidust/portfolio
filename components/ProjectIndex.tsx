@@ -8,7 +8,7 @@ const ProjectIndex: React.FC = () => {
     <section className="border-b-4 border-black">
       {/* Section header */}
       <div className="bg-black text-white p-4 flex justify-between items-center">
-        <h2 className="font-pixel text-3xl md:text-4xl uppercase tracking-wider font-bold">AI PROJECTS</h2>
+        <h2 className="font-pixel text-3xl md:text-4xl uppercase tracking-wider font-bold">SIDE PROJECTS</h2>
       </div>
 
       {/* Editorial list */}

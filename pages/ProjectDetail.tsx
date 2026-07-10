@@ -46,9 +46,14 @@ const ProjectDetail: React.FC = () => {
           </div>
         )}
 
-        <div className="border-l-4 border-black pl-4 md:pl-6 py-2 mb-10 bg-gray-50">
-          <p className="text-base md:text-lg leading-relaxed font-semibold">{project.insight}</p>
-        </div>
+        <section className="mb-8 md:mb-10">
+          <h2 className="text-sm font-semibold uppercase tracking-widest border-b border-gray-300 pb-2 mb-4">
+            The Insight
+          </h2>
+          <div className="border-l-4 border-black pl-4 md:pl-6 py-2 bg-gray-50">
+            <p className="text-base md:text-lg leading-relaxed font-semibold">{project.insight}</p>
+          </div>
+        </section>
 
         <Section label="The Problem"><p className="text-base leading-relaxed">{project.problem}</p></Section>
         <Section label="The Approach"><p className="text-base leading-relaxed">{project.approach}</p></Section>
