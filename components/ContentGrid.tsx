@@ -22,58 +22,16 @@ const ContentGrid: React.FC = () => {
   return (
     <section className="flex flex-col lg:flex-row min-h-[800px] border-b-4 border-black relative">
       
-      {/* LEFT COLUMN: CASE STUDIES */}
+      {/* LEFT COLUMN: SIDE PROJECTS */}
       <div className="flex-1 flex flex-col border-b-4 lg:border-b-0 lg:border-r-4 border-black">
-        {/* Header Label */}
+        {/* SIDE PROJECTS HEADER */}
         <div className="bg-black text-white p-4 flex justify-between items-center">
-           <h2 className="font-pixel text-4xl uppercase tracking-wider">CASE STUDIES</h2>
+           <h2 className="font-pixel text-4xl uppercase tracking-wider">SIDE PROJECTS</h2>
            <span className="font-mono text-xs border border-white px-1">01</span>
         </div>
 
-        {/* Cards Grid - Vertical Stack for Left Col */}
-        <div className="flex flex-col h-full bg-white">
-            {CASE_STUDIES.map((study, index) => (
-                <div 
-                  key={study.id} 
-                  className={`
-                    p-6 md:p-8 flex flex-col group cursor-pointer hover:bg-gray-100 transition-colors
-                    ${index !== CASE_STUDIES.length - 1 ? 'border-b-4 border-black' : ''}
-                  `}
-                  onClick={() => setSelectedStudy(study)}
-                >
-                    <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-xl md:text-2xl font-bold uppercase leading-none">{study.title}</h3>
-                        <ArrowRight className="opacity-0 group-hover:opacity-100 transition-opacity transform -rotate-45 group-hover:rotate-0" />
-                    </div>
-                    <p className="font-mono text-sm opacity-70 mt-2 line-clamp-3 max-w-md">
-                        {study.tagline}
-                    </p>
-                    <div className="mt-4">
-                         <span className="text-xs font-bold border-2 border-black px-2 py-1 uppercase bg-white group-hover:bg-black group-hover:text-white transition-colors">
-                            VIEW
-                         </span>
-                    </div>
-                </div>
-            ))}
-            {/* Fill empty space if needed */}
-            <div className="flex-grow bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10 min-h-[100px]"></div>
-        </div>
-      </div>
-
-      {/* CENTER DIVIDER (Visual Zipper) */}
-      {renderDivider()}
-
-      {/* RIGHT COLUMN: SIDE PROJECTS & CONTACT */}
-      <div className="flex-1 flex flex-col bg-white">
-         
-         {/* SIDE PROJECTS HEADER */}
-         <div className="bg-black text-white p-4 flex justify-between items-center">
-           <h2 className="font-pixel text-4xl uppercase tracking-wider">SIDE PROJECTS</h2>
-           <span className="font-mono text-xs border border-white px-1">02</span>
-        </div>
-
         <div className="flex flex-col h-full">
-            {PROJECTS.map((project, index) => (
+            {PROJECTS.map((project) => (
                 <div 
                   key={project.id} 
                   className="p-6 md:p-8 border-b-4 border-black hover:bg-gray-50 transition-colors"
@@ -120,11 +78,47 @@ const ContentGrid: React.FC = () => {
                     </div>
                 </div>
             ))}
-            
+
             {/* SYSTEM MESSAGE */}
             <div className="p-4 bg-gray-100 border-b-4 border-black text-center">
                 <p className="font-mono text-xs text-gray-500">{SYSTEM_MESSAGE}</p>
             </div>
+        </div>
+      </div>
+
+      {/* CENTER DIVIDER (Visual Zipper) */}
+      {renderDivider()}
+
+      {/* RIGHT COLUMN: CASE STUDIES, HOBBIES & CONTACT */}
+      <div className="flex-1 flex flex-col bg-white">
+
+         {/* CASE STUDIES HEADER */}
+         <div className="bg-black text-white p-4 flex justify-between items-center">
+           <h2 className="font-pixel text-4xl uppercase tracking-wider">CASE STUDIES</h2>
+           <span className="font-mono text-xs border border-white px-1">02</span>
+        </div>
+
+        <div className="flex flex-col h-full">
+            {CASE_STUDIES.map((study) => (
+                <div
+                  key={study.id}
+                  className="p-6 md:p-8 flex flex-col group cursor-pointer hover:bg-gray-100 transition-colors border-b-4 border-black"
+                  onClick={() => setSelectedStudy(study)}
+                >
+                    <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-xl md:text-2xl font-bold uppercase leading-none">{study.title}</h3>
+                        <ArrowRight className="opacity-0 group-hover:opacity-100 transition-opacity transform -rotate-45 group-hover:rotate-0" />
+                    </div>
+                    <p className="font-mono text-sm opacity-70 mt-2 line-clamp-3 max-w-md">
+                        {study.tagline}
+                    </p>
+                    <div className="mt-4">
+                         <span className="text-xs font-bold border-2 border-black px-2 py-1 uppercase bg-white group-hover:bg-black group-hover:text-white transition-colors">
+                            VIEW
+                         </span>
+                    </div>
+                </div>
+            ))}
 
             {/* HOBBIES SECTION */}
             <div className="p-6 md:p-8 border-b-4 border-black bg-white">

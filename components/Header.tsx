@@ -23,12 +23,9 @@ const Header: React.FC = () => {
         </div>
 
         <div className="w-full max-w-4xl">
-          <h1 className="text-6xl md:text-8xl font-pixel leading-[0.85] mb-4 tracking-wide uppercase break-words">
+          <h1 className="text-6xl md:text-8xl font-pixel leading-[0.85] tracking-wide uppercase break-words">
             {HERO_DATA.name}
           </h1>
-          <h2 className="text-xl md:text-2xl font-bold tracking-widest uppercase">
-            {HERO_DATA.role}
-          </h2>
         </div>
       </div>
 
