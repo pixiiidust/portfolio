@@ -124,7 +124,7 @@ export const PROJECTS: Project[] = [
   {
     id: "p0",
     title: "LKY Brain: Qwen3-14B LoRA",
-    description: "Fine-tuned Qwen3-14B with a LoRA adapter to capture Lee Kuan Yew's first-principles reasoning style from speeches, interviews, and press conferences. Built the corpus-to-training pipeline and held-out evaluation, improving the model's judged voice score from 2.04 to 2.88.",
+    description: "Tested whether a small open-source model on one consumer GPU can take on a domain expert's reasoning, cheaply, using Lee Kuan Yew as the case study. Defined a measurable eval for a subjective goal (six reasoning moves, blind-judged on held-out interviews), built the full pipeline from public transcripts to a trained model, and beat the base model on nearly every measure. Open-sourced as a reproducible template.",
     techFocus: "LoRA Fine-Tuning, Dataset Engineering + Held-Out Evaluation",
     link: "https://huggingface.co/sjsim/lky-qlora",
     linkLabel: "MODEL",
