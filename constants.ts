@@ -133,25 +133,25 @@ export const PROJECTS: Project[] = [
   {
     id: "p1",
     title: "Pixi Wiki",
-    description: "Publishes Jamie's notes, project docs, and research as maintained knowledge bases so humans can browse a clean wiki while agents read, search, and cite the same Markdown corpus through llms.txt, index.json, and read-only MCP.",
-    techFocus: "Human Wiki, Agent-Readable Markdown + Read-Only MCP",
+    description: "One source of notes and docs for both people and AI agents. People get a clean wiki. Agents get structured retrieval instead of web scraping: they search, read, and cite the Markdown directly, so they find the right source in a call or two instead of crawling and parsing pages.",
+    techFocus: "Human Wiki, Agent-Readable llms.txt / index.json + Read-Only MCP",
     link: "https://pixiiidust.github.io/pixi-wiki/"
   },
   {
     id: "p2",
     title: "J-Space-Replay",
-    description: "Replays VLM lens readouts over preset video traces so visitors can inspect what the model is poised to say without installing the local upload pipeline. Inspired by Anthropic's J-space paper.",
-    paperLabel: "Read the paper",
+    description: "A look under the hood at what a vision-language model is reasoning about as it watches a video, including what it actually \"thinks\" but never says. Preset clips run in the browser; or install code from repo to try your own clips. Inspired by Anthropic's",
+    paperLabel: "J-space paper.",
     paperLink: "https://transformer-circuits.pub/2026/workspace/index.html",
-    techFocus: "VLM Lens Replay, Preset Library + Local Upload Pipeline",
+    techFocus: "VLM Interpretability, Logit + Jacobian Lens Decoding + Precomputed Trace Gallery",
     link: "https://pixiiidust.github.io/j-space-replay/",
     repoLink: "https://github.com/pixiiidust/j-space-replay"
   },
   {
     id: "p3",
     title: "Planned Program Intel",
-    description: "Turns scattered public program information into traceable intelligence briefs so teams can spot eligibility, constraints, deadlines, and next actions without manually chasing sources.",
-    techFocus: "Public Signal Monitoring, Source Traceability + Time-to-Brief Reduction",
+    description: "A reimagining of planned.com's AI-native workflow, exploring how a product surface can lift user productivity. Each decision bubbles up to the next best decision-maker with its sources attached, so people act on it instead of triaging a pile of alerts.",
+    techFocus: "AI-Native App UX, Decision Routing + Source Traceability",
     link: "https://pixiiidust.github.io/planned-program-intel/"
   }
 ];
