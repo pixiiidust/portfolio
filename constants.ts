@@ -2,7 +2,6 @@ import { CaseStudy, Project, SocialLink } from './types';
 
 export const HERO_DATA = {
   name: "JAMIE SIM",
-  role: "PRODUCT MANAGER",
   subHeadline: "Building AI-powered products that solve tomorrow's problems today.\nMy motto is to anticipate what users want and ship quickly.",
   tickerText: "PRODUCT STRATEGY /// GEN-AI OPS /// GROWTH",
   bioHeadline: "Meet the PM",
