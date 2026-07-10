@@ -13,7 +13,7 @@ const ProjectDetail: React.FC = () => {
   }
 
   return (
-    <main className="p-4 md:p-8 lg:p-12">
+    <main tabIndex={-1} className="p-4 md:p-8 lg:p-12">
       <div className="max-w-4xl mx-auto">
         {/* Back link */}
         <Link

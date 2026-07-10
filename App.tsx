@@ -6,20 +6,41 @@ import IndexPage from './pages/IndexPage';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 import ProjectDetail from './pages/ProjectDetail';
 import NotFound from './pages/NotFound';
+import { CASE_STUDIES, PROJECTS } from './constants';
 
 const RouteEffects: React.FC = () => {
   const location = useLocation();
 
   React.useEffect(() => {
-    if (location.hash) {
-      window.requestAnimationFrame(() => {
-        document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: 'start' });
-      });
-      return;
-    }
+    const frame = window.requestAnimationFrame(() => {
+      if (location.hash) {
+        const target = document.getElementById(location.hash.slice(1));
+        target?.scrollIntoView({ block: 'start' });
+        target?.focus({ preventScroll: true });
+        return;
+      }
 
-    window.scrollTo({ top: 0, left: 0 });
+      window.scrollTo({ top: 0, left: 0 });
+      document.querySelector<HTMLElement>('main')?.focus({ preventScroll: true });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, [location.pathname, location.hash]);
+
+  React.useEffect(() => {
+    const slug = location.pathname.split('/').filter(Boolean).at(-1);
+    const item = location.pathname.startsWith('/work/')
+      ? CASE_STUDIES.find((study) => study.slug === slug)
+      : location.pathname.startsWith('/projects/')
+        ? PROJECTS.find((project) => project.slug === slug)
+        : undefined;
+
+    document.title = item
+      ? `${item.title} | Jamie Sim`
+      : location.pathname === '/'
+        ? 'Jamie Sim | Product Manager'
+        : 'Page Not Found | Jamie Sim';
+  }, [location.pathname]);
 
   return null;
 };
@@ -32,7 +53,7 @@ const App: React.FC = () => {
         className="bg-white w-full flex flex-col relative"
         style={{
           borderWidth: 'var(--brut-border)',
-          boxShadow: 'var(--brut-shadow)px var(--brut-shadow)px 0px 0px rgba(0,0,0,0.2)',
+          boxShadow: 'var(--brut-shadow) var(--brut-shadow) 0px 0px rgba(0,0,0,0.2)',
         }}
       >
         {/* Decorative corner marker */}

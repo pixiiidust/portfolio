@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 
 const NotFound: React.FC = () => {
   return (
-    <main className="p-6 md:p-12 lg:p-16 min-h-[60vh] flex flex-col items-center justify-center text-center">
+    <main tabIndex={-1} className="p-6 md:p-12 lg:p-16 min-h-[60vh] flex flex-col items-center justify-center text-center">
       <h1 className="display-xl font-pixel uppercase tracking-wider mb-4">
         404
       </h1>

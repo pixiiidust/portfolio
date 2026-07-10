@@ -11,22 +11,39 @@ const SolutionRenderer: React.FC<{ content: string }> = ({ content }) => {
     <div className="space-y-4">
       {blocks.map((block, i) => {
         const lines = block.trim().split('\n').filter(Boolean);
-        const listItems = lines.filter((l) => l.trim().startsWith('- '));
-        const paragraphs = lines.filter((l) => !l.trim().startsWith('- '));
+        const groups: Array<
+          { type: 'paragraph'; text: string } | { type: 'list'; items: string[] }
+        > = [];
+
+        lines.forEach((line) => {
+          if (line.trim().startsWith('- ')) {
+            const item = line.replace(/^\s*-\s*/, '');
+            const previous = groups.at(-1);
+            if (previous?.type === 'list') {
+              previous.items.push(item);
+            } else {
+              groups.push({ type: 'list', items: [item] });
+            }
+            return;
+          }
+
+          groups.push({ type: 'paragraph', text: line });
+        });
 
         return (
           <div key={i}>
-            {paragraphs.map((p, j) => (
-              <p key={j} className="leading-relaxed mb-2">
-                {p}
-              </p>
-            ))}
-            {listItems.length > 0 && (
-              <ul className="list-disc pl-6 space-y-2">
-                {listItems.map((item, j) => (
-                  <li key={j}>{item.replace(/^\s*-\s*/, '')}</li>
-                ))}
-              </ul>
+            {groups.map((group, j) =>
+              group.type === 'paragraph' ? (
+                <p key={j} className="leading-relaxed mb-2">
+                  {group.text}
+                </p>
+              ) : (
+                <ul key={j} className="list-disc pl-6 space-y-2">
+                  {group.items.map((item, k) => (
+                    <li key={k}>{item}</li>
+                  ))}
+                </ul>
+              ),
             )}
           </div>
         );
@@ -44,7 +61,7 @@ const CaseStudyDetail: React.FC = () => {
   }
 
   return (
-    <main className="p-4 md:p-8 lg:p-12">
+    <main tabIndex={-1} className="p-4 md:p-8 lg:p-12">
       <div className="max-w-4xl mx-auto">
         {/* Back link */}
         <Link

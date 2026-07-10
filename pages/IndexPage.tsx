@@ -13,7 +13,7 @@ const IndexPage: React.FC = () => {
   };
 
   return (
-    <main className="flex flex-col">
+    <main tabIndex={-1} className="flex flex-col">
       {/* HERO / INTRODUCTION */}
       <section className="flex flex-col items-center justify-center p-6 md:p-12 border-b-4 border-black bg-white text-center">
         {/* Profile image */}
@@ -36,7 +36,7 @@ const IndexPage: React.FC = () => {
           <div className="mt-6">
             <button
               onClick={scrollToBio}
-              className="inline-flex items-center justify-center font-bold tracking-wider uppercase text-sm px-6 py-4 transition-all active:translate-y-1 bg-transparent border-none hover:underline p-0 text-black text-xs touch-target"
+              className="inline-flex items-center justify-center font-bold tracking-wider uppercase text-xs px-6 py-4 transition-all active:translate-y-1 bg-transparent border-none hover:underline text-black touch-target"
               aria-label="Scroll to operator bio"
             >
               [ ABOUT ME &gt;&gt;&gt; ]
@@ -49,7 +49,7 @@ const IndexPage: React.FC = () => {
       <section
         id="bio"
         tabIndex={-1}
-        className="p-6 md:p-10 border-b-4 border-black bg-gray-50 scroll-mt-4"
+        className="p-6 md:p-10 border-b-4 border-black bg-gray-50 scroll-mt-16"
       >
         <div className="max-w-3xl mx-auto reading-column">
           <h2 className="display-lg font-pixel uppercase tracking-wider mb-6">
@@ -72,7 +72,7 @@ const IndexPage: React.FC = () => {
       </section>
 
       {/* CASE STUDIES SECTION */}
-      <section id="case-studies" className="border-b-4 border-black scroll-mt-4">
+      <section id="case-studies" tabIndex={-1} className="border-b-4 border-black scroll-mt-16">
         <div className="bg-black text-white p-4 flex justify-between items-center">
           <h2 className="display-lg font-pixel uppercase tracking-wider">CASE STUDIES</h2>
           <span className="font-mono text-xs border border-white px-1">01</span>
@@ -112,7 +112,7 @@ const IndexPage: React.FC = () => {
       </section>
 
       {/* AI PROJECTS SECTION */}
-      <section id="projects" className="border-b-4 border-black scroll-mt-4">
+      <section id="projects" tabIndex={-1} className="border-b-4 border-black scroll-mt-16">
         <div className="bg-black text-white p-4 flex justify-between items-center">
           <h2 className="display-lg font-pixel uppercase tracking-wider">AI PROJECTS</h2>
           <span className="font-mono text-xs border border-white px-1">02</span>
