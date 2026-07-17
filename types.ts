@@ -27,7 +27,9 @@ export interface Project {
   slug: string;
   kind: 'project';
   title: string;
+  detailTitle?: string;
   tagline: string;
+  subject?: Link;
   tech: string[];
   links: Link[];
   insight: string;

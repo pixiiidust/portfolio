@@ -26,6 +26,20 @@ const ProjectIndex: React.FC = () => {
                   </Link>
                   <p className="font-mono text-base mt-2 text-gray-700 leading-relaxed">
                     {project.tagline}
+                    {project.subject && (
+                      <>
+                        {' ('}
+                        <a
+                          href={project.subject.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold underline underline-offset-2 hover:no-underline"
+                        >
+                          {project.subject.label}
+                        </a>
+                        {').'}
+                      </>
+                    )}
                   </p>
                   <div className="mt-2">
                     <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">

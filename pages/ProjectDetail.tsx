@@ -24,7 +24,25 @@ const ProjectDetail: React.FC = () => {
       </div>
 
       <article className="max-w-[720px] mx-auto px-6 md:px-8 py-10 md:py-12 w-full">
-        <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4">{project.title}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
+          {project.detailTitle ?? project.title}
+        </h1>
+
+        {project.subject && (
+          <p className="mb-4 text-base leading-relaxed text-gray-700">
+            {project.tagline}
+            {' ('}
+            <a
+              href={project.subject.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold underline underline-offset-2 hover:no-underline"
+            >
+              {project.subject.label}
+            </a>
+            {').'}
+          </p>
+        )}
 
         <p className="mb-4 text-xs font-semibold text-gray-500 uppercase tracking-wide">
           {project.tech.join(' / ')}
