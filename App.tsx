@@ -35,9 +35,12 @@ const RouteEffects: React.FC = () => {
       : location.pathname.startsWith('/projects/')
         ? PROJECTS.find((project) => project.slug === slug)
         : undefined;
+    const itemTitle = item && 'detailTitle' in item && item.detailTitle
+      ? item.detailTitle
+      : item?.title;
 
-    document.title = item
-      ? `${item.title} | Jamie Sim`
+    document.title = itemTitle
+      ? `${itemTitle} | Jamie Sim`
       : location.pathname === '/about'
         ? 'About | Jamie Sim'
         : location.pathname === '/'
