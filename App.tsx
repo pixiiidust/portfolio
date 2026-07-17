@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Navigate, Routes, Route, useLocation } from 'react-router-dom';
 import Ticker from './components/Ticker';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
@@ -61,6 +61,7 @@ const App: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/work/:slug" element={<CaseStudyDetail />} />
+          <Route path="/projects/lky-brain" element={<Navigate to="/projects/lky-avatar" replace />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
