@@ -36,6 +36,7 @@ const ProjectDetail: React.FC = () => {
               href={project.subject.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${project.subject.label} on Wikipedia (opens in a new tab)`}
               className="font-semibold underline underline-offset-2 hover:no-underline"
             >
               {project.subject.label}
