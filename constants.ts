@@ -132,8 +132,8 @@ export const PROJECTS: Project[] = [
   {
     slug: 'lky-avatar',
     kind: 'project',
-    title: 'LKY Avatar: a real-time AI persona on one consumer GPU',
-    tagline: 'Combined a fine-tuned brain, voice, and animated portrait into a live conversation you can interrupt.',
+    title: 'LKY Avatar: a fictional AI simulation of a historical figure',
+    tagline: 'Combined a fine-tuned brain, voice, and animated portrait into a live, simulated conversation with a historical figure.',
     tech: ['Real-Time Voice AI', 'QLoRA + TTS Fine-Tuning + LiveKit'],
     links: [
       { label: 'VIDEO', href: 'https://youtu.be/4UbtvGy9HNk' },
@@ -143,11 +143,11 @@ export const PROJECTS: Project[] = [
       { label: 'HF MODEL', href: 'https://huggingface.co/sjsim/lky-qlora' },
       { label: 'HF DATASET', href: 'https://huggingface.co/datasets/sjsim/lky-reasoning-recipe' },
     ],
-    insight: 'A convincing persona demo is not one model. The reasoning, factual grounding, accent, interruption handling, and disclosure all have to hold together in the same live loop.',
-    problem: 'LKY Brain could reproduce a reasoning style in text, but a text model was not yet a conversation. Zero-shot voice cloning lost the Singaporean-British accent, the model could invent biography without grounding, and the full stack still had to respond in real time on one 16 GB consumer GPU.',
-    approach: 'I combined a QLoRA-tuned Qwen3-14B brain with retrieval over a hand-audited fact sheet, a Chatterbox TTS voice LoRA trained on about 23 minutes of real speech, Deepgram transcription, LiveKit with barge-in, and an animated portrait. The experience carries a persistent AI-simulation disclosure, and every generated audio response is watermarked.',
-    result: 'The result is a live, unscripted conversation running entirely on one RTX 5070 Ti. The tuned voice won 18 of 20 blind A/B pairs, visitors can interrupt an answer mid-sentence, and the three open-source repos make the avatar, brain, and voice pipelines reproducible. Generated responses are not authentic quotations, and the project is not affiliated with or endorsed by Lee Kuan Yew\'s family or the Government of Singapore.',
-    reflection: 'I would separate accent quality from Singapore proper-name pronunciation earlier. Fine-tuning preserved the accent, but proper nouns remain the next evaluation and product-quality gap.',
+    insight: 'A historical-figure simulation should feel conversational without pretending to be authentic. The reasoning, voice, embodiment, and disclosure all have to hold together in the same live loop.',
+    problem: 'I wanted to see whether separate AI systems could turn archived speech and public records into a live conversation with a historical figure, without presenting generated responses as authentic quotations. That meant preserving a distinctive reasoning style and accent, grounding biography, and running the full experience in real time on one consumer GPU.',
+    approach: 'I built a fictional AI simulation of Lee Kuan Yew by combining a QLoRA-tuned Qwen3-14B brain with retrieval over a hand-audited fact sheet, a Chatterbox TTS voice LoRA trained on about 23 minutes of real speech, Deepgram transcription, LiveKit with barge-in, and an animated portrait. The experience carries a persistent on-screen disclosure, and every generated audio response is watermarked.',
+    result: 'The result is a live, unscripted fictional AI simulation of a historical figure running entirely on one RTX 5070 Ti. The tuned voice won 18 of 20 blind A/B pairs, and visitors can interrupt an answer mid-sentence. Generated responses are not authentic quotations, and the project is not affiliated with or endorsed by Lee Kuan Yew\'s family or the Government of Singapore.',
+    reflection: 'I would evaluate accent quality and Singapore proper-name pronunciation separately from the start. Fine-tuning preserved the accent, but proper nouns remain the next evaluation and product-quality gap.',
   },
   {
     slug: 'pixi-wiki',
